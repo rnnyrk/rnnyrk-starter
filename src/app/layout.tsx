@@ -1,10 +1,10 @@
 import './global.css';
 import type * as i from 'types';
 import clsx from 'clsx';
-
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 import { RootLayout } from 'modules/layouts';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
