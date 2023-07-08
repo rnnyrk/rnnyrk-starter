@@ -20,7 +20,8 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "0.32.1"
+    "sharp": "0.32.1",
+    "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",
