@@ -1,6 +1,6 @@
 'use client';
 
-import { List } from 'common/layout';
+import { List } from 'common/layout/List';
 
 const getAge = () => {
   const today = new Date();

@@ -1,7 +1,5 @@
 export const metadata = {
-  title: {
-    default: 'Curriculum Vitae',
-  },
+  title: 'Curriculum Vitae',
 };
 
 const Cv = () => {

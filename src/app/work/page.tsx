@@ -1,7 +1,5 @@
 export const metadata = {
-  title: {
-    default: 'Work',
-  },
+  title: 'Work',
 };
 
 const Work = () => {

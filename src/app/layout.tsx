@@ -3,7 +3,7 @@ import type * as i from 'types';
 import { Inter } from 'next/font/google';
 
 import { cn } from 'utils';
-import { RootLayout } from 'modules/layouts';
+import { RootLayout } from 'modules/layouts/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
