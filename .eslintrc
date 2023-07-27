@@ -8,16 +8,26 @@
       "jsx": true
     }
   },
+  "plugins": ["sonarjs"],
+  "extends": [
+    "react-app",
+    "plugin:@next/next/recommended",
+    "plugin:sonarjs/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "__DEV__": false,
+    "__TEST__": false,
+    "__ACC__": false,
+    "__PROD__": false
+  },
+
   "settings": {
     "react": {
       "version": "detect"
     }
   },
-  "ignorePatterns": [
-    "**/dist/**/*.js",
-    "**/.next/**/*.js",
-    "**/node_modules/**/*.{js,ts,tsx}"
-  ],
+  "ignorePatterns": ["**/dist/**/*.js", "**/.next/**/*.js", "**/node_modules/**/*.{js,ts,tsx}"],
   "rules": {
     "array-bracket-spacing": 0,
     "arrow-parens": 0,
@@ -31,10 +41,7 @@
     "no-console": [
       1,
       {
-        "allow": [
-          "info",
-          "error"
-        ]
+        "allow": ["info", "error"]
       }
     ],
     "no-trailing-spaces": 0,
@@ -75,19 +82,5 @@
     "@typescript-eslint/no-redeclare": 0,
     "@typescript-eslint/type-annotation-spacing": 0,
     "@typescript-eslint/object-curly-spacing": 0
-  },
-  "extends": [
-    "react-app",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:@next/next/recommended",
-    "prettier"
-  ],
-  "globals": {
-    "__DEV__": false,
-    "__TEST__": false,
-    "__ACC__": false,
-    "__PROD__": false
   }
 }

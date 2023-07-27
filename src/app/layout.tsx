@@ -1,4 +1,5 @@
 import './global.css';
+
 import type * as i from 'types';
 import { Inter } from 'next/font/google';
 
@@ -7,17 +8,19 @@ import { RootLayout } from 'modules/layouts/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const siteName = 'Ronny Rook';
+
 export const metadata = {
   title: {
-    default: 'About me | Ronny Rook',
-    template: '%s | Ronny Rook',
+    default: `About me | ${siteName}`,
+    template: `%s | ${siteName}`,
   },
   description: 'Javascript developer from Amsterdam',
   openGraph: {
-    title: 'Ronny Rook',
+    title: siteName,
     description: 'Javascript developer from Amsterdam',
     url: 'https://rnny.nl',
-    siteName: 'Ronny Rook',
+    siteName,
     images: [
       {
         url: 'https://rnny.nl/og.jpg',
@@ -40,7 +43,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Ronny Rook',
+    title: siteName,
     card: 'summary_large_image',
   },
   manifest: '/images/favicon/site.webmanifest',
