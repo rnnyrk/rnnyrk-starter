@@ -17,6 +17,7 @@ export const metadata = {
     template: `%s | ${siteName}`,
   },
   description: 'Javascript developer from Amsterdam',
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: siteName,
     description: 'Javascript developer from Amsterdam',
