@@ -9,6 +9,7 @@ import { RootLayout } from 'modules/layouts/RootLayout';
 const inter = Inter({ subsets: ['latin'] });
 
 const siteName = 'Ronny Rook';
+const siteUrl = 'https://rnny.nl';
 
 export const metadata = {
   title: {
@@ -19,11 +20,11 @@ export const metadata = {
   openGraph: {
     title: siteName,
     description: 'Javascript developer from Amsterdam',
-    url: 'https://rnny.nl',
+    url: siteUrl,
     siteName,
     images: [
       {
-        url: 'https://rnny.nl/og.jpg',
+        url: `${siteUrl}/og.jpg`,
         width: 1920,
         height: 1080,
       },
