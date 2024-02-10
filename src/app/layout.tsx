@@ -10,17 +10,18 @@ const inter = Inter({ subsets: ['latin'] });
 
 const siteName = 'Ronny Rook';
 const siteUrl = 'https://rnny.nl';
+const siteDescription = 'Javascript developer from Amsterdam';
 
 export const metadata = {
   title: {
     default: `About me | ${siteName}`,
     template: `%s | ${siteName}`,
   },
-  description: 'Javascript developer from Amsterdam',
+  description: siteDescription,
   metadataBase: new URL(siteUrl),
   openGraph: {
     title: siteName,
-    description: 'Javascript developer from Amsterdam',
+    description: siteDescription,
     url: siteUrl,
     siteName,
     images: [
@@ -62,7 +63,7 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <html
       lang="en"
@@ -74,8 +75,8 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-type Props = i.NextPageProps<{
+type LayoutProps = {
   children: React.ReactNode;
-}>;
+};
 
 export default Layout;
