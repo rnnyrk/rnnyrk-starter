@@ -28,6 +28,18 @@ export const posts = createTable(
     updated_at: int('updated_at', { mode: 'timestamp' }),
   },
   (example) => ({
+    // @TODO why an index, breaks db:push?
     nameIndex: index('name_idx').on(example.name),
   }),
 );
+
+export const movies = createTable('movie', {
+  id: text('id', { length: 36 })
+    .primaryKey()
+    .$defaultFn(() => randomUUID())
+    .notNull(),
+  title: text('title', { length: 256 }),
+  director: text('director', { length: 256 }),
+  year: int('year', { mode: 'number' }),
+  genres: text('genres'),
+});

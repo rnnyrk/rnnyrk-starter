@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 function Optimistic({ searchParams }: OptimisticProps) {
-  const genres = !searchParams?.genre
+  const activeGenres = !searchParams?.genre
     ? []
     : typeof searchParams.genre === 'string'
       ? [searchParams.genre]
@@ -16,7 +16,7 @@ function Optimistic({ searchParams }: OptimisticProps) {
 
   return (
     <div className="grid grid-cols-6">
-      <OptimisticSidebar genres={genres} />
+      <OptimisticSidebar activeGenres={activeGenres} />
       <section className="col-span-4 p-4 group-has-[[data-pending]]:animate-pulse">
         <Suspense
           fallback={<p>Loading...</p>}
@@ -24,7 +24,7 @@ function Optimistic({ searchParams }: OptimisticProps) {
         >
           <article>
             <Heading>Optimistic (server)</Heading>
-            <div>{genres?.map((genre) => <p key={genre}>{genre}</p>)}</div>
+            <div>{activeGenres?.map((genre) => <p key={genre}>{genre}</p>)}</div>
           </article>
         </Suspense>
       </section>

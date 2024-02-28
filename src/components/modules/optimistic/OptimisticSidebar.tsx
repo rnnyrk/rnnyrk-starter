@@ -3,12 +3,14 @@
 import { useOptimistic, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { useGenres } from '@queries/useMovies';
 import { cn } from '@utils';
 import { Heading } from '@common/typography/Heading';
 
-export function OptimisticSidebar({ genres }: OptimisticSidebarProps) {
+export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
   const router = useRouter();
-  const [optimisticGenres, setOptimisticGenres] = useOptimistic(genres);
+  const { data: genres, isLoading } = useGenres();
+  const [optimisticGenres, setOptimisticGenres] = useOptimistic(activeGenres);
   const [pending, startTransition] = useTransition();
 
   function updateGenres(newGenres: string[]) {
@@ -25,9 +27,15 @@ export function OptimisticSidebar({ genres }: OptimisticSidebarProps) {
       data-pending={pending ? '' : undefined}
       className="group col-span-2 p-4 bg-slate-800"
     >
-      <Heading variant="h3">Genres</Heading>
+      <Heading
+        variant="h3"
+        className="mb-2"
+      >
+        Genres
+      </Heading>
       <div className="flex gap-2 flex-wrap mb-4">
-        {GENRES.map((genre) => {
+        {isLoading && <div className="animate-pulse bg-slate-600 w-6 h-6 rounded-full" />}
+        {genres?.map((genre) => {
           const isActive = optimisticGenres.includes(genre);
 
           return (
@@ -52,7 +60,7 @@ export function OptimisticSidebar({ genres }: OptimisticSidebarProps) {
       </div>
 
       <div>
-        <strong>Params (Client):</strong>
+        <strong className="mb-2">Params (Client):</strong>
         <ul>{optimisticGenres?.map((genre) => <li key={`list-${genre}`}>{genre}</li>)}</ul>
       </div>
     </aside>
@@ -60,29 +68,5 @@ export function OptimisticSidebar({ genres }: OptimisticSidebarProps) {
 }
 
 type OptimisticSidebarProps = {
-  genres: string[];
+  activeGenres: string[];
 };
-
-const GENRES = [
-  'Action',
-  'Adventure',
-  'Animation',
-  'Biography',
-  'Comedy',
-  'Crime',
-  'Drama',
-  'Family',
-  'Fantasy',
-  'Film-Noir',
-  'History',
-  'Horror',
-  'Music',
-  'Musical',
-  'Mystery',
-  'Romance',
-  'Sci-Fi',
-  'Sport',
-  'Thriller',
-  'War',
-  'Western',
-];
