@@ -1,6 +1,7 @@
-import type { InferInsertModel } from 'drizzle-orm';
-
 import type { movies, posts } from './schema';
 
-export type Movie = InferInsertModel<typeof movies>;
-export type Post = InferInsertModel<typeof posts>;
+export type Movie = typeof movies.$inferSelect;
+export type InsertMovie = typeof movies.$inferInsert;
+
+export type Post = typeof posts.$inferSelect;
+export type InsertPost = typeof posts.$inferInsert;
