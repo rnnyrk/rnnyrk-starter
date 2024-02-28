@@ -9,7 +9,7 @@ const config = {
     '^next(.*)$',
     '<THIRD_PARTY_MODULES>',
     '',
-    '^(@src|@vectors|@images|@utils|@hooks|@queries|@store|@styles|@server|@config|@navigators|@screens|@static)(/.*|$)',
+    '^(@src|@env|@vectors|@images|@utils|@hooks|@queries|@store|@styles|@server|@config|@navigators|@screens|@static)(/.*|$)',
     '^(@layouts|@modules|@common)(/.*|$)',
     '',
     '^[./]',
