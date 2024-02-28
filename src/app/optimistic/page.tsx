@@ -19,7 +19,7 @@ async function Optimistic({ searchParams }: OptimisticProps) {
   const initialMovies = await getMovies({ activeGenres });
 
   return (
-    <div className="group grid grid-cols-6">
+    <div className="group grid grid-cols-6 items-start">
       <OptimisticSidebar activeGenres={activeGenres} />
       <section
         className="col-span-4 p-4 group-has-[[data-pending]]:animate-pulse"

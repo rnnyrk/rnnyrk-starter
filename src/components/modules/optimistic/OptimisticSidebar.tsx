@@ -25,7 +25,7 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
   return (
     <aside
       data-pending={pending ? '' : undefined}
-      className="col-span-2 p-4 bg-slate-800"
+      className="col-span-2 p-4 bg-slate-800 rounded-lg"
     >
       <Heading
         variant="h3"
@@ -35,7 +35,7 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
       </Heading>
       <div className="flex gap-2 flex-wrap mb-4">
         {isLoading && <div className="animate-pulse bg-slate-600 w-6 h-6 rounded-full" />}
-        {genres?.map((genre) => {
+        {genres?.sort().map((genre) => {
           const isActive = optimisticGenres.includes(genre);
 
           return (
