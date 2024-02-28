@@ -1,7 +1,7 @@
 'use client';
 
+import { usePosts } from '@queries/posts';
 import { Heading } from '@common/typography/Heading';
-import { usePosts } from '@queries/usePosts';
 
 export function BlogOverview() {
   const { data, isLoading } = usePosts();
