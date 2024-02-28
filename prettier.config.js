@@ -1,7 +1,5 @@
 /** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 const config = {
-  trailingComma: 'all',
-  arrowParens: 'always',
   singleQuote: true,
   singleAttributePerLine: true,
   printWidth: 100,
@@ -11,8 +9,8 @@ const config = {
     '^next(.*)$',
     '<THIRD_PARTY_MODULES>',
     '',
-    '^(src|vectors|images|utils|hooks|queries|store|styles|config|navigators|screens|static)(/.*|$)',
-    '^(pages|layouts|modules|common)(/.*|$)',
+    '^(@src|@vectors|@images|@utils|@hooks|@queries|@store|@styles|@server|@config|@navigators|@screens|@static)(/.*|$)',
+    '^(@layouts|@modules|@common)(/.*|$)',
     '',
     '^[./]',
   ],
