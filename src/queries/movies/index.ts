@@ -3,10 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 
 import { getMovies } from '@server/data/movies';
 
-export function useMovies({ activeGenres }: i.GetMovies) {
+export function useMovies({ activeGenres, initialMovies }: i.GetMovies) {
   return useQuery({
     queryKey: ['movies', activeGenres?.join(',')],
     queryFn: () => getMovies({ activeGenres }),
+    initialData: initialMovies,
   });
 }
 

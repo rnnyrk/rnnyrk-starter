@@ -25,7 +25,7 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
   return (
     <aside
       data-pending={pending ? '' : undefined}
-      className="group col-span-2 p-4 bg-slate-800"
+      className="col-span-2 p-4 bg-slate-800"
     >
       <Heading
         variant="h3"

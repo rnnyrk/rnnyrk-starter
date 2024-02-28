@@ -1,10 +1,12 @@
 'use client';
 
+import type * as i from '@types';
+
 import { useMovies } from '@queries/movies';
 import { Heading } from '@common/typography/Heading';
 
-export function OptimisticOverview({ activeGenres }: OptimisticOverviewProps) {
-  const { data: movies, isLoading } = useMovies({ activeGenres });
+export function OptimisticOverview({ activeGenres, initialMovies }: OptimisticOverviewProps) {
+  const { data: movies, isLoading } = useMovies({ activeGenres, initialMovies });
 
   return (
     <article>
@@ -31,4 +33,5 @@ export function OptimisticOverview({ activeGenres }: OptimisticOverviewProps) {
 
 type OptimisticOverviewProps = {
   activeGenres: string[];
+  initialMovies: i.Movie[];
 };

@@ -14,7 +14,10 @@ import * as schema from '../db/schema';
  * @see https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations
  */
 
-export async function getMovies({ activeGenres }: i.GetMovies) {
+export async function getMovies({ activeGenres }: Pick<i.GetMovies, 'activeGenres'>) {
+  // sleep for 2 seconds to simulate a slow network
+  await new Promise((resolve) => setTimeout(resolve, 400));
+
   if (activeGenres && activeGenres.length > 0) {
     const likeGenres = activeGenres.map((genre) => like(schema.movies.genres, `%${genre}%`));
     return await db

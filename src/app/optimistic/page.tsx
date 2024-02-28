@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 
+import { getMovies } from '@server/data/movies';
 import { OptimisticOverview } from '@modules/optimistic/OptimisticOverview';
 import { OptimisticSidebar } from '@modules/optimistic/OptimisticSidebar';
 
@@ -14,15 +15,24 @@ async function Optimistic({ searchParams }: OptimisticProps) {
       ? [searchParams.genre]
       : searchParams.genre;
 
+  // Passing initial movies prevents a flash of initial empty state (like with genres)
+  const initialMovies = await getMovies({ activeGenres });
+
   return (
-    <div className="grid grid-cols-6">
+    <div className="group grid grid-cols-6">
       <OptimisticSidebar activeGenres={activeGenres} />
-      <section className="col-span-4 p-4 group-has-[[data-pending]]:animate-pulse">
+      <section
+        className="col-span-4 p-4 group-has-[[data-pending]]:animate-pulse"
+        style={{ animationDuration: '.5s' }}
+      >
         <Suspense
           fallback={<p>Loading...</p>}
           key={JSON.stringify(searchParams)}
         >
-          <OptimisticOverview activeGenres={activeGenres} />
+          <OptimisticOverview
+            initialMovies={initialMovies}
+            activeGenres={activeGenres}
+          />
         </Suspense>
       </section>
     </div>
