@@ -1,6 +1,7 @@
 'use client';
 
-import { usePosts } from "@queries/usePosts";
+import { Heading } from '@common/typography/Heading';
+import { usePosts } from '@queries/usePosts';
 
 export function BlogOverview() {
   const { data, isLoading } = usePosts();
@@ -8,13 +9,16 @@ export function BlogOverview() {
   if (!data || isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="mt-4">
       {data.map((post) => (
-        <div key={post.id}>
-          <h2>{post.name}</h2>
+        <article
+          key={post.id}
+          className="mb-4 last:mb-0"
+        >
+          <Heading variant="h2">{post.name}</Heading>
           <p>{post.content}</p>
-        </div>
+        </article>
       ))}
     </div>
-  )
+  );
 }

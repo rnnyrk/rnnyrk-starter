@@ -1,4 +1,5 @@
-import { BlogOverview } from "@modules/blog/BlogOverview";
+import { Heading } from '@common/typography/Heading';
+import { BlogOverview } from '@modules/blog/BlogOverview';
 
 export const metadata = {
   title: 'Blog',
@@ -7,10 +8,10 @@ export const metadata = {
 function Blog() {
   return (
     <article>
-      <h1>Blog</h1>
+      <Heading>Blog</Heading>
       <BlogOverview />
     </article>
   );
-};
+}
 
 export default Blog;
