@@ -1,18 +1,19 @@
+import type * as i from '@types';
 import { useQuery } from '@tanstack/react-query';
 
 import { getMovies } from '@server/data/movies';
 
-export function useMovies() {
+export function useMovies({ activeGenres }: i.GetMovies) {
   return useQuery({
-    queryKey: ['movies'],
-    queryFn: () => getMovies(),
+    queryKey: ['movies', activeGenres],
+    queryFn: () => getMovies({ activeGenres }),
   });
 }
 
 export function useGenres() {
   return useQuery({
     queryKey: ['genres'],
-    queryFn: () => getMovies(),
+    queryFn: () => getMovies({ activeGenres: null }),
     select: (data) => {
       if (!data) return [];
 
