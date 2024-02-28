@@ -1,6 +1,6 @@
 'use client';
 
-import { List } from 'common/layout/List';
+import { List } from '@common/layout/List';
 
 const getAge = () => {
   const today = new Date();
@@ -16,7 +16,7 @@ const getAge = () => {
   return age;
 };
 
-const Home = () => {
+function Home() {
   return (
     <section>
       <List.Container className="mb-10">
@@ -32,18 +32,18 @@ const Home = () => {
       </List.Container>
       <article>
         <p className="mb-4">
-          Hey, I'm Ronny. An {getAge()} year old <strong>Javascript developer</strong> from
+          Hey, I&apos;m Ronny. An {getAge()} year old <strong>Javascript developer</strong> from
           Amsterdam, The Netherlands.
         </p>
 
         <p className="mb-4">
-          On a daily basis I'm working for a digital agency Label A. Mainly working on all kind of
+          On a daily basis I&apos;m working for a digital agency Label A. Mainly working on all kind of
           React and React Native based projects as well as leading the innovation team; pushing the
           frontend craft, engineers and tech stack to the next level.
         </p>
 
         <p className="mb-4">
-          Furthermore I'm working as a freelance developer and - consultants. This contains various
+          Furthermore I&apos;m working as a freelance developer and - consultants. This contains various
           projects from settings up CI/CD pipelines to building React (Native) applications. For
           example{' '}
           <a
@@ -65,12 +65,12 @@ const Home = () => {
         <p className="mb-4">
           Outside of work you can find me in the water kitesurfing, still trying to run a marathon,
           bouldering, riding my motorbike or spending time with friends and/or in nature. So I guess
-          I'm your sportive tech nerd who loves being outside.
+          I&apos;m your sportive tech nerd who loves being outside.
         </p>
       </article>
 
       <footer>
-        <p className="text-slate-600 text-xs italic">
+        <p className="text-xs italic text-slate-600">
           This website is build with React / NextJS 13 (app dir, @next/font), PNPM, Tailwind, Framer
           Motion and TypeScript
         </p>
