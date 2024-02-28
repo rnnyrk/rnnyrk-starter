@@ -1,7 +1,7 @@
 'use server';
 
 import type * as i from '@types';
-import { inArray } from 'drizzle-orm';
+import { and, like } from 'drizzle-orm';
 
 import { db } from '@server/db';
 
@@ -16,9 +16,11 @@ import * as schema from '../db/schema';
 
 export async function getMovies({ activeGenres }: i.GetMovies) {
   if (activeGenres && activeGenres.length > 0) {
-    return await db.query.movies.findMany({
-      where: inArray(schema.movies.genres, activeGenres),
-    });
+    const likeGenres = activeGenres.map((genre) => like(schema.movies.genres, `%${genre}%`));
+    return await db
+      .select()
+      .from(schema.movies)
+      .where(and(...likeGenres));
   }
 
   return await db.query.movies.findMany();

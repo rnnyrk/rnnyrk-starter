@@ -5,7 +5,7 @@ import { getMovies } from '@server/data/movies';
 
 export function useMovies({ activeGenres }: i.GetMovies) {
   return useQuery({
-    queryKey: ['movies', activeGenres],
+    queryKey: ['movies', activeGenres?.join(',')],
     queryFn: () => getMovies({ activeGenres }),
   });
 }

@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Optimistic',
 };
 
-function Optimistic({ searchParams }: OptimisticProps) {
+async function Optimistic({ searchParams }: OptimisticProps) {
   const activeGenres = !searchParams?.genre
     ? []
     : typeof searchParams.genre === 'string'

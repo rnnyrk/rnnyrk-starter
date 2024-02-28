@@ -12,26 +12,19 @@ import { index, int, sqliteTableCreator, text } from 'drizzle-orm/sqlite-core';
  */
 export const createTable = sqliteTableCreator((name) => `rnnyrk-test_${name}`);
 
-export const posts = createTable(
-  'post',
-  {
-    id: text('id', { length: 36 })
-      .primaryKey()
-      .$defaultFn(() => randomUUID())
-      .notNull(),
-    name: text('name', { length: 256 }),
-    content: text('content'),
-    image: text('image'),
-    created_at: int('created_at', { mode: 'timestamp_ms' })
-      .default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))`)
-      .notNull(),
-    updated_at: int('updated_at', { mode: 'timestamp' }),
-  },
-  (example) => ({
-    // @TODO why an index, breaks db:push?
-    nameIndex: index('name_idx').on(example.name),
-  }),
-);
+export const posts = createTable('post', {
+  id: text('id', { length: 36 })
+    .primaryKey()
+    .$defaultFn(() => randomUUID())
+    .notNull(),
+  name: text('name', { length: 256 }),
+  content: text('content'),
+  image: text('image'),
+  created_at: int('created_at', { mode: 'timestamp_ms' })
+    .default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))`)
+    .notNull(),
+  updated_at: int('updated_at', { mode: 'timestamp' }),
+});
 
 export const movies = createTable('movie', {
   id: text('id', { length: 36 })
