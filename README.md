@@ -3,6 +3,7 @@
 Starter for NextJS 14 with:
 
 - Drizzle with SQLite
+- NextJS App Dir / layout nesting
 - React Hook Form
 - React Query (React Server Actions)
 - Tailwind
