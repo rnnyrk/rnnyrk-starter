@@ -3,7 +3,7 @@
 import { useOptimistic, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { useGenres } from '@queries/useMovies';
+import { useGenres } from '@queries/movies';
 import { cn } from '@utils';
 import { Heading } from '@common/typography/Heading';
 

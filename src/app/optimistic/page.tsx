@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { Heading } from '@common/typography/Heading';
+import { OptimisticOverview } from '@modules/optimistic/OptimisticOverview';
 import { OptimisticSidebar } from '@modules/optimistic/OptimisticSidebar';
 
 export const metadata = {
@@ -22,10 +22,7 @@ function Optimistic({ searchParams }: OptimisticProps) {
           fallback={<p>Loading...</p>}
           key={JSON.stringify(searchParams)}
         >
-          <article>
-            <Heading>Optimistic (server)</Heading>
-            <div>{activeGenres?.map((genre) => <p key={genre}>{genre}</p>)}</div>
-          </article>
+          <OptimisticOverview activeGenres={activeGenres} />
         </Suspense>
       </section>
     </div>
