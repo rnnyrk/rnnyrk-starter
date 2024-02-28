@@ -6,9 +6,9 @@ const headingVariants = cva(cn('font-bold font-inter leading-relaxed'), {
   variants: {
     variant: {
       h1: 'text-primary text-2xl',
-      h2: 'text-secondary text-xl',
-      h3: 'text-secondary text-lg',
-      h4: 'font-normal text-secondary text-md',
+      h2: 'text-white text-xl',
+      h3: 'text-white text-lg',
+      h4: 'text-white text-md font-normal',
     },
   },
   defaultVariants: {

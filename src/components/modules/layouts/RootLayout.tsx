@@ -7,8 +7,11 @@ export const RootLayout = ({ children }: RootLayoutProps) => {
         <li>
           <Link href="/">About</Link>
         </li>
-        <li className="ml-4">
+        <li className="mx-4">
           <Link href="/blog">Blog</Link>
+        </li>
+        <li>
+          <Link href="/optimistic">Optimistic</Link>
         </li>
       </ul>
       <main className="mx-auto max-w-4xl">{children}</main>
