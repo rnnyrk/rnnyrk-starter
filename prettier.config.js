@@ -4,7 +4,7 @@ const config = {
   singleAttributePerLine: true,
   printWidth: 100,
   importOrder: [
-    '^types$',
+    '^@types$',
     '^(react|react-dom)$',
     '^next(.*)$',
     '<THIRD_PARTY_MODULES>',
