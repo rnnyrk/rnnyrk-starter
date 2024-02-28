@@ -2,7 +2,7 @@
 
 Starter for NextJS 14 with:
 
-- Drizzle with PlanetScale
+- Drizzle with SQLite
 - React Hook Form
 - React Query (React Server Actions)
 - Tailwind

@@ -37,15 +37,15 @@ function Home() {
         </p>
 
         <p className="mb-4">
-          On a daily basis I&apos;m working for a digital agency Label A. Mainly working on all kind of
-          React and React Native based projects as well as leading the innovation team; pushing the
-          frontend craft, engineers and tech stack to the next level.
+          On a daily basis I&apos;m working for a digital agency Label A. Mainly working on all kind
+          of React and React Native based projects as well as leading the innovation team; pushing
+          the frontend craft, engineers and tech stack to the next level.
         </p>
 
         <p className="mb-4">
-          Furthermore I&apos;m working as a freelance developer and - consultants. This contains various
-          projects from settings up CI/CD pipelines to building React (Native) applications. For
-          example{' '}
+          Furthermore I&apos;m working as a freelance developer and - consultants. This contains
+          various projects from settings up CI/CD pipelines to building React (Native) applications.
+          For example{' '}
           <a
             href="https://apps.apple.com/nl/app/roommates/id1523528110"
             target="_blank"
@@ -77,6 +77,6 @@ function Home() {
       </footer>
     </section>
   );
-};
+}
 
 export default Home;
