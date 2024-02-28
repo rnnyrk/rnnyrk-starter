@@ -3,7 +3,9 @@
 Starter for NextJS 14 with:
 
 - Drizzle with PlanetScale
-- Server Actions with React Query
+- React Hook Form
+- React Query (React Server Actions)
 - Tailwind
 - TypeScript
+- Zod
 - Zustand
