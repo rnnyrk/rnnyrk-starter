@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
+const config = {
   trailingComma: 'all',
   arrowParens: 'always',
   singleQuote: true,
@@ -17,3 +18,5 @@ module.exports = {
   ],
   plugins: ['prettier-plugin-tailwindcss', '@ianvs/prettier-plugin-sort-imports'],
 };
+
+export default config;
