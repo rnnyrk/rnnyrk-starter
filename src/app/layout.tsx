@@ -2,8 +2,9 @@ import './global.css';
 
 import { Inter } from 'next/font/google';
 
-import { cn } from 'utils';
-import { RootLayout } from 'modules/layouts/RootLayout';
+import { cn } from '@utils';
+import { RootLayout } from '@modules/layouts/RootLayout';
+import { Providers } from '@modules/layouts/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -66,10 +67,12 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <html
       lang="en"
-      className={cn('text-black bg-white dark:text-white dark:bg-[#111111]', inter.className)}
+      className={cn('bg-white text-black dark:bg-[#111111] dark:text-white', inter.className)}
     >
       <head />
-      <RootLayout>{children}</RootLayout>
+      <Providers>
+        <RootLayout>{children}</RootLayout>
+      </Providers>
     </html>
   );
 };

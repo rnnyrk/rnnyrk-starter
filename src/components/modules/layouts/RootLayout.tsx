@@ -1,20 +1,21 @@
 import Link from 'next/link';
 
-export const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <body className="min-h-full min-w-full">
-      <ul className="w-full flex justify-center py-8 mb-10">
+      <ul className="mb-10 flex w-full justify-center py-8">
         <li>
           <Link href="/">About</Link>
         </li>
-        <li className="mx-4">
-          <Link href="/work">Work</Link>
-        </li>
-        <li>
-          <Link href="/cv">Cv</Link>
+        <li className="ml-4">
+          <Link href="/blog">Blog</Link>
         </li>
       </ul>
-      <main className="max-w-4xl mx-auto">{children}</main>
+      <main className="mx-auto max-w-4xl">{children}</main>
     </body>
   );
+};
+
+type RootLayoutProps = {
+  children: React.ReactNode;
 };
