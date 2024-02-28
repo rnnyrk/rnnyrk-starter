@@ -4,6 +4,7 @@
   "description": "Starter for NextJS 14, Server Action with React Query, Tailwind, TypeScript",
   "author": "Ronny Rook",
   "url": "https://rnny.nl/",
+  "type": "module",
   "scripts": {
     "start": "next start",
     "dev": "next dev",
