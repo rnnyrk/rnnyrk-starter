@@ -1,4 +1,5 @@
-import type { movies, posts } from './schema';
+import type { movies } from './schema/movies';
+import type { posts } from './schema/posts';
 
 export type Movie = typeof movies.$inferSelect;
 export type InsertMovie = typeof movies.$inferInsert;
