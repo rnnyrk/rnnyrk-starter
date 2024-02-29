@@ -5,6 +5,10 @@
   "author": "Ronny Rook",
   "url": "https://rnny.nl/",
   "type": "module",
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "next start",
     "dev": "next dev",
