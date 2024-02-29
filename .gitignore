@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# database
-*.db
-
 # next.js
 /.next/
 /out/
