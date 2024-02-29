@@ -3,6 +3,8 @@
 import { usePosts } from '@queries/posts';
 import { Heading } from '@common/typography/Heading';
 
+import { AddBlogModal } from './AddBlogModal';
+
 export function BlogOverview() {
   const { data, isLoading } = usePosts();
 
@@ -19,6 +21,8 @@ export function BlogOverview() {
           <p>{post.content}</p>
         </article>
       ))}
+
+      <AddBlogModal />
     </div>
   );
 }
