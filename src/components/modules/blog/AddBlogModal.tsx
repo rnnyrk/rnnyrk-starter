@@ -1,8 +1,10 @@
 'use client';
 
+import { useRef } from 'react';
 import type { z } from 'zod';
 
 import { useZodForm } from '@hooks';
+import { useCreatePost } from '@queries/posts';
 import { insertPostSchema } from '@server/db/schema/posts';
 import { Form, FormField } from '@common/form/Form';
 import { InputForm } from '@common/form/Input';
@@ -18,20 +20,30 @@ import {
 export type AddBlogForm = z.infer<typeof insertPostSchema>;
 
 export function AddBlogModal() {
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   const form = useZodForm(insertPostSchema, {
-    defaultValues: {},
+    defaultValues: {
+      name: '',
+      content: '',
+    },
   });
 
-  function onSubmit(values: AddBlogForm) {
-    console.log('values', values);
+  const { mutateAsync: onCreatePost } = useCreatePost();
 
+  async function onSubmit(values: AddBlogForm) {
+    await onCreatePost(values);
+
+    // Reset form, close modal
     form.reset();
+    btnRef?.current?.click();
   }
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button
+          ref={btnRef}
           variant="secondary"
           className="fixed bottom-4 left-2/4 -translate-x-2/4"
         >
