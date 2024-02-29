@@ -1,4 +1,6 @@
-await import("./src/env.js");
+/** @typedef {import('next').NextConfig} NextConfig */
+/** @typedef {import('webpack').Configuration} WebpackConfiguration */
+await import('./src/env.js');
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -11,6 +13,32 @@ const nextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+
+  /** @param {WebpackConfiguration} config */
+  webpack: (config) => {
+    /** @type {import('webpack').ModuleOptions['rules']} */
+    const rules = [
+      {
+        test: /\.svg$/,
+        oneOf: [
+          {
+            resourceQuery: /external/,
+            type: 'asset/inline',
+          },
+          {
+            use: ['@svgr/webpack'],
+          },
+        ],
+      },
+    ];
+
+    config.module = {
+      ...config.module,
+      rules: [...(config?.module?.rules ?? []), ...rules],
+    };
+
+    return config;
   },
 };
 
