@@ -16,6 +16,8 @@
     "lint": "next lint",
     "db:push": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio",
+    "docker:build": "docker build . -t rnnyrk-starter",
+    "docker:run": "docker run -d -p 3000:3000 rnnyrk-starter",
     "prettier": "prettier --write '**/*.{js,ts,tsx}'",
     "typecheck": "tsc --noEmit",
     "test": "npx concurrently 'npm run lint' 'npm run typecheck'"

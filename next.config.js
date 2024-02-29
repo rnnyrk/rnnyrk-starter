@@ -4,6 +4,7 @@ await import('./src/env.js');
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   poweredByHeader: false,
 
   async headers() {
