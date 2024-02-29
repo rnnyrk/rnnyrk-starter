@@ -7,6 +7,7 @@ Starter for NextJS 14 with:
 - React Hook Form
 - React Server Actions
 - React Query
+- Shadcn / Radix UI
 - SQLite
 - Tailwind
 - TypeScript
