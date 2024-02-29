@@ -2,14 +2,7 @@
 export {};
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// global variables
 declare global {
-  declare const __DEV__: boolean;
-  declare const __PROD__: boolean;
-  declare const __ACC__: boolean;
-  declare const __TEST__: boolean;
-  declare const __API_URL__: string;
-
   // We have to declare how files other than .ts(x) or .js(x) are handled by our codebase because
   // Typescript does not know we are handling these files with Webpack.
   declare module '*.otf' {
