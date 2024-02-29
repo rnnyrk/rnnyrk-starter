@@ -12,12 +12,6 @@ const config = {
     'plugin:@typescript-eslint/stylistic-type-checked',
     'prettier',
   ],
-  globals: {
-    __DEV__: false,
-    __TEST__: false,
-    __ACC__: false,
-    __PROD__: false,
-  },
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
     // Feel free to reconfigure them to your own preference.
@@ -33,6 +27,7 @@ const config = {
     ],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/require-await': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-misused-promises': [
       'error',
       {
