@@ -15,7 +15,7 @@ export const posts = createTable('post', {
   created_at: int('created_at', { mode: 'timestamp_ms' })
     .default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))`)
     .notNull(),
-  updated_at: int('updated_at', { mode: 'timestamp' }),
+  updated_at: int('updated_at', { mode: 'timestamp_ms' }),
 });
 
 /**
