@@ -1,21 +1,12 @@
-import { randomUUID } from 'crypto';
-import { sql } from 'drizzle-orm';
-import { int, text } from 'drizzle-orm/sqlite-core';
+import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { createInsertSchema } from 'drizzle-zod';
 
-import { createTable } from '../helpers';
-
-export const posts = createTable('post', {
-  id: text('id', { length: 36 })
-    .primaryKey()
-    .$defaultFn(() => randomUUID())
-    .notNull(),
-  name: text('name', { length: 256 }),
-  content: text('content'),
-  created_at: int('created_at', { mode: 'timestamp_ms' })
-    .default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))`)
-    .notNull(),
-  updated_at: int('updated_at', { mode: 'timestamp_ms' }),
+export const posts = pgTable('post', {
+  id: uuid('id').primaryKey().notNull().defaultRandom(),
+  name: text('name').notNull(),
+  content: text('content').notNull(),
+  created_at: timestamp('created_at').defaultNow().notNull(),
+  updated_at: timestamp('updated_at').defaultNow().notNull(),
 });
 
 /**
