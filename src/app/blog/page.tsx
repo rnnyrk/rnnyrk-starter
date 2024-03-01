@@ -5,6 +5,8 @@ export const metadata = {
   title: 'Blog',
 };
 
+export const runtime = 'edge';
+
 function Blog() {
   return (
     <article>
