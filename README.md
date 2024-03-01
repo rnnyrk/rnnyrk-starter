@@ -8,7 +8,7 @@ Starter for NextJS 14 with:
 - React Server Actions
 - React Query
 - Shadcn / Radix UI
-- SQLite
+- PostgeSQL / SQLite
 - Tailwind
 - TypeScript
 - Zod
@@ -26,14 +26,18 @@ To add items to SQLite database, run `pnpm run db:studio` and use the SQLite Stu
 
 ## Deployment
 
-## Cloudflare Pages
+Besides [Vercel](https://vercel.com) we can deploy NextJS with [Cloudflare Pages](https://pages.cloudflare.com) or with Docker via AWS, Azure or GCP.
 
-- Use `export const runtime = 'edge';` for non-static pages.
-  - No SQLite (branch in this repo `sqlite`) support in Cloudflare Pages
-- Add the correct compatibility flags in your Cloudflare Pages settings.
+[Self Hosting - NextJS Docs](https://nextjs.org/docs/app/building-your-application/deploying)
 
+### Cloudflare Pages
+
+Use `export const runtime = 'edge';` for non-static pages (no SQLite - branch in this repo `sqlite` - support in Cloudflare Pages, because of Edge runtime).
+
+Cloudflare has some limitations with NextJS, especially with the `Image` component. Workarounds are possible, e.g. with Cloudflare Workers.
+
+- [Cloudflare limitations w/ Next <Image />](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-nextjs-site/#image-component)
 - [Compatibility-flags for Cloudflare Pages](https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules)
-- [Cloudflare Pages - Edge Handlers](https://developers.cloudflare.com/pages/platform/edge-handlers).
 - [NextJS Edge and Node runtimes](https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes)
 
 ### Docker
