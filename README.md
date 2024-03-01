@@ -24,6 +24,19 @@ pnpm run db:push && pnpm dev
 
 To add items to SQLite database, run `pnpm run db:studio` and use the SQLite Studio to add items to the database.
 
+## Deployment
+
+## Cloudflare Pages
+
+Use `export const runtime = 'edge';` for non-static pages.
+
+Add compatibility-flags for Cloudflare Pages: [https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules](https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules)
+
+See more at:
+
+- [Cloudflare Pages - Edge Handlers](https://developers.cloudflare.com/pages/platform/edge-handlers).
+- [NextJS Edge and Node runtimes](https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes)
+
 ### Docker
 
 To run this application in a Docker environment, make sure `output: standalone` is set in `next.config.js`. Install Docker cli and run `pnpm run docker:build` and `pnpm run docker:run`. Access the local server at `http://localhost:3333`.
