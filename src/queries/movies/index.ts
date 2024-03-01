@@ -22,7 +22,7 @@ export function useGenres() {
         return movie.genres?.split(',');
       });
 
-      return Array.from(new Set(genres.flat())) as string[];
+      return Array.from(new Set(genres.flat()));
     },
   });
 }
