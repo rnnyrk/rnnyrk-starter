@@ -19,7 +19,7 @@ Starter for NextJS 14 with:
 ```bash
 git clone git@github.com:rnnyrk/rnnyrk-starter.git PROJECT_NAME
 cd PROJECT_NAME && pnpm i
-pnpm run db:push && pnpm dev
+pnpm run db:generate && pnpm dev
 ```
 
 To add items to SQLite database, run `pnpm run db:studio` and use the SQLite Studio to add items to the database.
@@ -28,12 +28,11 @@ To add items to SQLite database, run `pnpm run db:studio` and use the SQLite Stu
 
 ## Cloudflare Pages
 
-Use `export const runtime = 'edge';` for non-static pages.
+- Use `export const runtime = 'edge';` for non-static pages.
+  - No SQLite (branch in this repo `sqlite`) support in Cloudflare Pages
+- Add the correct compatibility flags in your Cloudflare Pages settings.
 
-Add compatibility-flags for Cloudflare Pages: [https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules](https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules)
-
-See more at:
-
+- [Compatibility-flags for Cloudflare Pages](https://stackoverflow.com/questions/77199165/error-could-not-access-built-in-node-js-modules)
 - [Cloudflare Pages - Edge Handlers](https://developers.cloudflare.com/pages/platform/edge-handlers).
 - [NextJS Edge and Node runtimes](https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes)
 
