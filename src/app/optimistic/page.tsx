@@ -8,6 +8,8 @@ export const metadata = {
   title: 'Optimistic',
 };
 
+export const runtime = 'edge';
+
 async function Optimistic({ searchParams }: OptimisticProps) {
   const activeGenres = !searchParams?.genre
     ? []
