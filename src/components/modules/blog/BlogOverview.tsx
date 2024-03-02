@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { usePosts } from '@queries/posts';
 import { Heading } from '@common/typography/Heading';
 
@@ -19,6 +21,8 @@ export function BlogOverview() {
         >
           <Heading variant="h2">{post.name}</Heading>
           <p>{post.content}</p>
+
+          <Link href={`/blog/edit/${post.id}`}>Edit</Link>
         </article>
       ))}
 

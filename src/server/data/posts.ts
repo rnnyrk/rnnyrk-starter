@@ -16,7 +16,7 @@ export async function getPosts() {
   return await db.query.posts.findMany();
 }
 
-export async function getPost(id: string) {
+export async function getPostById(id: string) {
   return await db.query.posts.findFirst({
     where: eq(posts.id, id),
   });

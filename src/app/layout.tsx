@@ -63,7 +63,7 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, modal }: LayoutProps) => {
   return (
     <html
       lang="en"
@@ -72,6 +72,8 @@ const Layout = ({ children }: LayoutProps) => {
       <head />
       <Providers>
         <RootLayout>{children}</RootLayout>
+        {modal}
+        <div id="modal-root" />
       </Providers>
     </html>
   );
@@ -79,6 +81,7 @@ const Layout = ({ children }: LayoutProps) => {
 
 type LayoutProps = {
   children: React.ReactNode;
+  modal: React.ReactNode;
 };
 
 export default Layout;
