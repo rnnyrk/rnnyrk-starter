@@ -1,9 +1,9 @@
 {
-  "name": "rnny-starter-nextjs13",
+  "name": "bureau-beun",
   "version": "1.0.0",
-  "description": "Starter for NextJS 14, Server Actions with React Query, Tailwind, TypeScript",
+  "description": "Website Bureau Beun",
   "author": "Ronny Rook",
-  "url": "https://rnny.nl/",
+  "url": "https://bureau-beun.nl/",
   "type": "module",
   "engines": {
     "npm": ">=9.0.0",
@@ -16,8 +16,8 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:pg --schema ./src/server/db/schema/index.ts --out=./src/server/migrations",
     "db:studio": "drizzle-kit studio",
-    "docker:build": "docker build . -t rnnyrk-starter",
-    "docker:run": "docker run -d -p 3000:3000 rnnyrk-starter",
+    "docker:build": "docker build . -t bureau-beun",
+    "docker:run": "docker run -d -p 3000:3000 bureau-beun",
     "prettier": "prettier --write '**/*.{js,ts,tsx}'",
     "typecheck": "tsc --noEmit",
     "test": "npx concurrently 'npm run lint' 'npm run typecheck'"
@@ -36,6 +36,7 @@
     "clsx": "2.1.0",
     "cmdk": "0.2.1",
     "drizzle-orm": "0.30.4",
+    "framer-motion": "11.0.10",
     "next": "14.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
