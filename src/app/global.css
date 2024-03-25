@@ -39,9 +39,3 @@ table {
   overflow-x: auto;
   white-space: nowrap;
 }
-
-.mask {
-  mask-image: url('/vectors/mask.svg');
-  mask-repeat: no-repeat;
-  mask-size: 40px;
-}

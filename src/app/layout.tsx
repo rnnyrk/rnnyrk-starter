@@ -8,13 +8,13 @@ import { RootLayout } from '@modules/layouts/RootLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const siteName = 'Bureau Beun';
-const siteUrl = 'https://bureau-beun.nl';
-const siteDescription = 'Het productiebedrijf waar kameraadschap en hard werken met plezier centraal staat.';
+const siteName = 'Ronny Rook';
+const siteUrl = 'https://rnny.nl';
+const siteDescription = 'Javascript developer from Amsterdam';
 
 export const metadata = {
   title: {
-    default: `Home | ${siteName}`,
+    default: `About me | ${siteName}`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -31,7 +31,7 @@ export const metadata = {
         height: 1080,
       },
     ],
-    locale: 'nl-NL',
+    locale: 'en-US',
     type: 'website',
   },
   robots: {
