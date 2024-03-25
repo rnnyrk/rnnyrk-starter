@@ -10,7 +10,6 @@ import * as posts from './schema/posts';
 
 const sql = neon(env.DATABASE_URL);
 
-// @ts-expect-error Neon/Drizzle types are not compatible (waiting for fix)
 export const db = drizzle(sql, {
   schema: {
     ...movies,
