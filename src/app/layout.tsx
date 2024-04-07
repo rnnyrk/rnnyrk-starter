@@ -1,5 +1,6 @@
 import './global.css';
 
+import { type Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
 import { cn } from '@utils';
@@ -11,6 +12,13 @@ const inter = Inter({ subsets: ['latin'] });
 const siteName = 'Ronny Rook';
 const siteUrl = 'https://rnny.nl';
 const siteDescription = 'Javascript developer from Amsterdam';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata = {
   title: {
