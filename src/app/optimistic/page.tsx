@@ -10,12 +10,15 @@ export const metadata = {
 
 export const runtime = 'edge';
 
-async function Optimistic({ searchParams }: OptimisticProps) {
-  const activeGenres = !searchParams?.genre
-    ? []
-    : typeof searchParams.genre === 'string'
-      ? [searchParams.genre]
-      : searchParams.genre;
+type OptimisticProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+async function Optimistic(props: OptimisticProps) {
+  const searchParams = await props.searchParams;
+  const genres = searchParams.genre;
+
+  const activeGenres = !genres ? [] : typeof genres === 'string' ? [genres] : genres;
 
   // Passing initial movies prevents a flash of initial empty state (like with genres)
   const initialMovies = await getMovies({ activeGenres });
@@ -24,7 +27,7 @@ async function Optimistic({ searchParams }: OptimisticProps) {
     <div className="group grid grid-cols-6 items-start">
       <OptimisticSidebar activeGenres={activeGenres} />
       <section
-        className="col-span-4 p-4 group-has-[[data-pending]]:animate-pulse"
+        className="col-span-4 p-4 group-has-data-pending:animate-pulse"
         style={{ animationDuration: '.5s' }}
       >
         <Suspense
@@ -40,9 +43,5 @@ async function Optimistic({ searchParams }: OptimisticProps) {
     </div>
   );
 }
-
-type OptimisticProps = {
-  searchParams: Record<string, string | string[] | undefined>;
-};
 
 export default Optimistic;
