@@ -10,7 +10,6 @@ const config = {
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
-    'prettier',
   ],
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
