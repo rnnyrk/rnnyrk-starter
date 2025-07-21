@@ -14,7 +14,7 @@ type OptimisticProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-async function Optimistic(props: OptimisticProps) {
+export default async function Optimistic(props: OptimisticProps) {
   const searchParams = await props.searchParams;
   const genres = searchParams.genre;
 
@@ -43,5 +43,3 @@ async function Optimistic(props: OptimisticProps) {
     </div>
   );
 }
-
-export default Optimistic;

@@ -16,7 +16,7 @@ const getAge = () => {
   return age;
 };
 
-function Home() {
+export default function Home() {
   return (
     <section>
       <List.Container className="mb-10">
@@ -78,5 +78,3 @@ function Home() {
     </section>
   );
 }
-
-export default Home;

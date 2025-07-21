@@ -7,6 +7,15 @@ const nextConfig = {
   output: 'standalone',
   poweredByHeader: false,
 
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+
   async headers() {
     return [
       {

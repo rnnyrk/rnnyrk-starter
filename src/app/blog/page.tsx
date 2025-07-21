@@ -7,7 +7,7 @@ export const metadata = {
 
 export const runtime = 'edge';
 
-function Blog() {
+export default function Blog() {
   return (
     <article>
       <Heading>Blog</Heading>
@@ -15,5 +15,3 @@ function Blog() {
     </article>
   );
 }
-
-export default Blog;

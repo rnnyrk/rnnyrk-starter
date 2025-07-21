@@ -71,7 +71,11 @@ export const metadata = {
   },
 };
 
-const Layout = ({ children }: LayoutProps) => {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <html
       lang="en"
@@ -83,10 +87,4 @@ const Layout = ({ children }: LayoutProps) => {
       </Providers>
     </html>
   );
-};
-
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-export default Layout;
+}
