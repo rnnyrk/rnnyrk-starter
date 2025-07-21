@@ -78,8 +78,8 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <html
-      lang="en"
       className={cn('bg-white text-black dark:bg-[#111111] dark:text-white', inter.className)}
+      lang="en"
     >
       <head />
       <Providers>

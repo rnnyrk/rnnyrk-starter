@@ -14,8 +14,8 @@ export function BlogOverview() {
     <div className="mt-4">
       {data.map((post) => (
         <article
-          key={post.id}
           className="mb-4 last:mb-0"
+          key={post.id}
         >
           <Heading variant="h2">{post.name}</Heading>
           <p>{post.content}</p>

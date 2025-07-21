@@ -24,12 +24,12 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
 
   return (
     <aside
-      data-pending={pending ? '' : undefined}
       className="col-span-2 p-4 bg-slate-800 rounded-lg"
+      data-pending={pending ? '' : undefined}
     >
       <Heading
-        variant="h3"
         className="mb-2"
+        variant="h3"
       >
         Genres
       </Heading>
@@ -40,6 +40,10 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
 
           return (
             <button
+              className={cn('px-3 py-1 rounded-full whitespace-nowrap font-medium border text-sm', {
+                'bg-secondary text-white border-secondary ': isActive,
+                'border-gray-500 hover:border-gray-400': !isActive,
+              })}
               key={`genre-btn-${genre}`}
               onClick={() => {
                 const newGenres = !optimisticGenres.includes(genre)
@@ -48,10 +52,6 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
 
                 updateGenres(newGenres);
               }}
-              className={cn('px-3 py-1 rounded-full whitespace-nowrap font-medium border text-sm', {
-                'bg-secondary text-white border-secondary ': isActive,
-                'border-gray-500 hover:border-gray-400': !isActive,
-              })}
             >
               {genre}
             </button>
@@ -61,7 +61,11 @@ export function OptimisticSidebar({ activeGenres }: OptimisticSidebarProps) {
 
       <div>
         <strong className="mb-2">Params (Client):</strong>
-        <ul>{optimisticGenres?.map((genre) => <li key={`list-${genre}`}>{genre}</li>)}</ul>
+        <ul>
+          {optimisticGenres?.map((genre) => (
+            <li key={`list-${genre}`}>{genre}</li>
+          ))}
+        </ul>
       </div>
     </aside>
   );

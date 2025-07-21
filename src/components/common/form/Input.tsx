@@ -8,7 +8,6 @@ import { FormControl, FormDescription, FormItem, FormLabel, FormMessage } from '
 const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
   return (
     <input
-      type={type}
       className={cn(
         'flex h-12 w-full rounded-md border border-gray-400 bg-white px-3 py-2 text-md text-black ring-offset-background',
         'file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400',
@@ -17,6 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type, ...pr
         className,
       )}
       ref={ref}
+      type={type}
       {...props}
     />
   );

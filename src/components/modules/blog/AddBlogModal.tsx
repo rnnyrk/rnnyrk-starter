@@ -43,9 +43,9 @@ export function AddBlogModal() {
     <Dialog>
       <DialogTrigger asChild>
         <Button
+          className="fixed bottom-4 left-2/4 -translate-x-2/4"
           ref={btnRef}
           variant="secondary"
-          className="fixed bottom-4 left-2/4 -translate-x-2/4"
         >
           Add content
         </Button>
@@ -64,8 +64,8 @@ export function AddBlogModal() {
                 return (
                   <InputForm
                     className="mb-4"
-                    label="Name"
                     field={field}
+                    label="Name"
                   />
                 );
               }}
@@ -76,17 +76,17 @@ export function AddBlogModal() {
               render={({ field }) => {
                 return (
                   <InputForm
-                    label="Description"
                     field={field}
+                    label="Description"
                   />
                 );
               }}
             />
 
             <Button
-              type="submit"
               className="mt-8"
               disabled={!form.formState.isValid}
+              type="submit"
             >
               Add content
             </Button>

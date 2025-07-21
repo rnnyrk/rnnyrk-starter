@@ -48,8 +48,8 @@ export default function Home() {
           For example{' '}
           <a
             href="https://apps.apple.com/nl/app/roommates/id1523528110"
-            target="_blank"
             rel="noreferrer"
+            target="_blank"
           >
             Roommates
           </a>{' '}

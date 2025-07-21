@@ -35,8 +35,8 @@ export default async function Optimistic(props: OptimisticProps) {
           key={JSON.stringify(searchParams)}
         >
           <OptimisticOverview
-            initialMovies={initialMovies}
             activeGenres={activeGenres}
+            initialMovies={initialMovies}
           />
         </Suspense>
       </section>

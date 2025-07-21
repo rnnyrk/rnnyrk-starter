@@ -23,15 +23,15 @@ function Combobox({ enableSearch = false, options, value, setValue }: ComboboxPr
 
   return (
     <Popover
-      open={open}
       onOpenChange={setOpen}
+      open={open}
     >
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
-          role="combobox"
           aria-expanded={open}
           className="w-full h-12 justify-between font-normal"
+          role="combobox"
+          variant="outline"
         >
           {value ? options.find((options) => options.value === value)?.label : 'Maak een keuze...'}
           <ChevronsUpDownSvg className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -44,15 +44,15 @@ function Combobox({ enableSearch = false, options, value, setValue }: ComboboxPr
           <CommandGroup>
             {options.map((options) => (
               <CommandItem
-                key={options.value}
-                value={`${options.value} ${options.label}`}
                 className={cn({
                   'text-primary': value === options.value,
                 })}
+                key={options.value}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? undefined : options.value);
                   setOpen(false);
                 }}
+                value={`${options.value} ${options.label}`}
               >
                 <CheckSvg
                   className={cn(
@@ -91,8 +91,8 @@ function ComboboxForm<T extends FieldValues, K extends Path<T> = any>({
       <Combobox
         enableSearch={enableSearch}
         options={options}
-        value={field.value}
         setValue={field.onChange}
+        value={field.value}
       />
       {description && <FormDescription>{description}</FormDescription>}
       <FormMessage />

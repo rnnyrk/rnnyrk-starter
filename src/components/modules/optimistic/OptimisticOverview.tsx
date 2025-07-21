@@ -15,8 +15,8 @@ export function OptimisticOverview({ activeGenres, initialMovies }: OptimisticOv
         {movies?.map((movie) => {
           return (
             <div
-              key={movie.id}
               className="p-2 border-slate-600 bg-slate-800 border rounded-md"
+              key={movie.id}
             >
               <strong>
                 {movie.title} - {movie.year}

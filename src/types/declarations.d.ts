@@ -1,7 +1,3 @@
-// REQUIRED TO TURN THIS FILE INTO A MODULE -- DO NOT REMOVE
-export {};
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
   // We have to declare how files other than .ts(x) or .js(x) are handled by our codebase because
   // Typescript does not know we are handling these files with Webpack.
